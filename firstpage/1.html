@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Donate Karo Login</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			background : url(./images/images\ \(2\).jpg) no-repeat ;
+			background-size: cover;
+			background-position: center;
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			width: 100vw;
+		}
+		h1 {
+			color: #fff;
+			text-align: center;
+			margin-top: 50px;
+			text-shadow: 1px 1px 2px #333;
+		}
+		form {
+			width: 400px;
+			margin: 0 auto;
+			background-color: rgba(255, 255, 255, 0.8);
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+		}
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		input[type="email"],
+		input[type="password"] {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		.alert {
+			background-color: #f44336;
+			color: white;
+			padding: 10px;
+			margin-bottom: 15px;
+			text-align: center;
+			border-radius: 5px;
+			display: none;
+		}
+		.alert.show {
+			display: block;
+		}
+        .create-account {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .create-account a {
+            color: #000;
+            text-decoration: none;
+        }
+        .create-account a:hover {
+            text-decoration: underline;
+        }
+	</style>
+</head>
+<body>
+	
+	<h1>Login to Donate Karo</h1>
+	<form onsubmit="return validateForm()">
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email">
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password">
+		<input type="submit" value="Login">
+		<div id="alert-message" class="alert"></div>
+        <div class="create-account">
+            <a href="2.html" target="_blank">Create Account</a>
+			<a href="3.html" target="_blank"> #</a>
+			
+        </div>
+	</form>
+	<script>
+		function validateForm() {
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			if (email != "example@donatekaro.com" || password != "password") {
+				var alertMessage = document.getElementById("alert-message");
+				alertMessage.innerHTML = "Invalid email or password.";
+				alertMessage.classList.add("show");
+				return false;
+				
+			}
+			
+		}
+	</script>
